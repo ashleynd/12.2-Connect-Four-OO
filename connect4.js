@@ -126,7 +126,7 @@ handleClick(event) {
   // check for win
   if (this.checkForWin()) {
     this.gameOver = true;
-    return this.endGame(`Player ${this.activePlayer} won!`);
+    return this.endGame(`Player ${this.activePlayer.color} won!`);
   }
 
   // check for tie
@@ -144,7 +144,7 @@ handleClick(event) {
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 
 checkForWin() {
-  function _win(cells) {
+  // function _win(cells) {
     // Check four cells to see if they're all color of current player
     //  - cells: list of four (y, x) cells
     //  - returns true if all are legal coordinates & all match currPlayer
@@ -156,11 +156,9 @@ checkForWin() {
         y < this.HEIGHT &&
         x >= 0 &&
         x < this.WIDTH &&
-        board[y][x] === this.activePlayer
+        this.board[y][x] === this.activePlayer
     );
-
-    
-  }
+  // }
 
   // TODO: read and understand this code. Add comments to help you.
       // See the different ways to win 
@@ -180,9 +178,9 @@ checkForWin() {
 }
 }
 class Player {
-  contructor (color) {
-    getElementById("p1-color").style.this.color = '';
-    getElementById("p2-color").style.this.color = '';
+  constructor (color) {
+    // getElementById("p1-color").style.this.color = '';
+    // getElementById("p2-color").style.this.color = '';
     this.color = color;
   }
 }
