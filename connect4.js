@@ -7,6 +7,9 @@
  */
 
 
+ 
+
+
 class Game {
   constructor(p1, p2, HEIGHT = 6, WIDTH = 7 ) {
     this.players = [p1, p2];
